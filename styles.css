@@ -1,0 +1,206 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 6.4rem;
+  font-size: 1.6rem;
+}
+
+.container {
+  align-content: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, 25px);
+}
+
+.number {
+  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(5, 5px);
+  grid-template-rows: repeat(9, 5px);
+  justify-content: center;
+}
+
+.n {
+  grid-template-areas:
+    '. a a a .'
+    'b . c . d'
+    'b . c . d'
+    'b . c . d'
+    '. e e e .'
+    'f . g . h'
+    'f . g . h'
+    'f . g . h'
+    '. i i i .';
+}
+
+.n1 {
+  grid-template-areas:
+    '. . c . .'
+    '. . c . .'
+    '. . c . .'
+    '. . c . .'
+    '. . . . .'
+    '. . g . .'
+    '. . g . .'
+    '. . g . .'
+    '. . g . .';
+}
+
+.n2 {
+  grid-template-areas:
+    '. a a a .'
+    '. . . . d'
+    '. . . . d'
+    '. . . . d'
+    '. e e e .'
+    'f . . . .'
+    'f . . . .'
+    'f . . . .'
+    '. i i i .';
+}
+
+.n3 {
+  grid-template-areas:
+    '. a a a .'
+    '. . . . d'
+    '. . . . d'
+    '. . . . d'
+    '. e e e .'
+    '. . . . h'
+    '. . . . h'
+    '. . . . h'
+    '. i i i .';
+}
+
+.n4 {
+  grid-template-areas:
+    'b . . . d'
+    'b . . . d'
+    'b . . . d'
+    'b . . . d'
+    '. e e e .'
+    '. . . . h'
+    '. . . . h'
+    '. . . . h'
+    '. . . . h';
+}
+
+.n5 {
+  grid-template-areas:
+    '. a a a .'
+    'b . . . .'
+    'b . . . .'
+    'b . . . .'
+    '. e e e .'
+    '. . . . h'
+    '. . . . h'
+    '. . . . h'
+    '. i i i .';
+}
+
+.n6 {
+  grid-template-areas:
+    '. a a a .'
+    'b . . . .'
+    'b . . . .'
+    'b . . . .'
+    '. e e e .'
+    'f . . . h'
+    'f . . . h'
+    'f . . . h'
+    '. i i i .';
+}
+
+.n7 {
+  grid-template-areas:
+    '. a a a .'
+    '. . . . d'
+    '. . . . d'
+    '. . . . d'
+    '. . . . .'
+    '. . . . h'
+    '. . . . h'
+    '. . . . h'
+    '. . . . .';
+}
+
+.n8 {
+  grid-template-areas:
+    '. a a a .'
+    'b . . . d'
+    'b . . . d'
+    'b . . . d'
+    '. e e e .'
+    'f . . . h'
+    'f . . . h'
+    'f . . . h'
+    '. i i i .';
+}
+
+.n9 {
+  grid-template-areas:
+    '. a a a .'
+    'b . . . d'
+    'b . . . d'
+    'b . . . d'
+    '. e e e .'
+    '. . . . h'
+    '. . . . h'
+    '. . . . h'
+    '. . . . .';
+}
+
+.n0 {
+  grid-template-areas:
+    '. a a a .'
+    'b . . . d'
+    'b . . . d'
+    'b . . . d'
+    '. . . . .'
+    'f . . . h'
+    'f . . . h'
+    'f . . . h'
+    '. i i i .';
+}
+
+.line {
+  background-color: black;
+}
+
+.la {
+  grid-area: a;
+}
+.lb {
+  grid-area: b;
+}
+.lc {
+  grid-area: c;
+}
+.ld {
+  grid-area: d;
+}
+.le {
+  grid-area: e;
+}
+.lf {
+  grid-area: f;
+}
+.lg {
+  grid-area: g;
+}
+.lh {
+  grid-area: h;
+}
+.li {
+  grid-area: i;
+}
