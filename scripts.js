@@ -1,45 +1,42 @@
 (function() {
-  const template = `
-  <div class="number">
-    <div class="line la"></div>
-    <div class="line lb"></div>
-    <div class="line lc"></div>
-    <div class="line ld"></div>
-    <div class="line le"></div>
-    <div class="line lf"></div>
-    <div class="line lg"></div>
-    <div class="line lh"></div>
-    <div class="line li"></div>
-  </div>`;
-  const container = document.querySelector('.container');
-  const date = new Date();
+  const numbersEl = document.querySelectorAll('.number');
+  const numbersHoursEl = Array.from(numbersEl).slice(0, 2);
+  const numbersMinutesEl = Array.from(numbersEl).slice(2, 4);
+  const numbersSecondsEl = Array.from(numbersEl).slice(4, 6);
 
-  for (let i = 0; i < date.getTime().toString().length; i++) {
-    container.appendChild(htmlToElement(template));
-  }
+  function setDate() {
+    const now = new Date();
 
-  // random number generator
-  function getRandomNumber(limit) {
-    return Math.floor(Math.random() * Math.floor(limit));
-  }
-
-  // html to element
-  function htmlToElement(html) {
-    let template = document.createElement('template');
-    html = html.trim();
-    template.innerHTML = html;
-    return template.content.firstChild;
-  }
-
-  const els = document.querySelectorAll('.number');
-
-  setInterval(function() {
-    let d = new Date();
-    let dStr = d.getTime().toString();
-    for (let j = 0; j < els.length; j++) {
-      els[j].removeAttribute('class');
-      els[j].classList.add('number');
-      els[j].classList.add(`n${dStr.slice(j, j + 1)}`);
+    // Seconds ...
+    const seconds = now.getSeconds();
+    const secondsNumbers = seconds.toString().split('');
+    if (secondsNumbers.length === 1) secondsNumbers.unshift('0');
+    for (let i = 0; i < numbersHoursEl.length; i++) {
+      numbersSecondsEl[i].removeAttribute('class');
+      numbersSecondsEl[i].classList.add('number');
+      numbersSecondsEl[i].classList.add(`n${secondsNumbers[i]}`);
     }
-  }, 1);
+
+    // Minutes ...
+    const minutes = now.getMinutes();
+    const minutesNumbers = minutes.toString().split('');
+    if (minutesNumbers.length === 1) minutesNumbers.unshift('0');
+    for (let j = 0; j < numbersHoursEl.length; j++) {
+      numbersMinutesEl[j].removeAttribute('class');
+      numbersMinutesEl[j].classList.add('number');
+      numbersMinutesEl[j].classList.add(`n${minutesNumbers[j]}`);
+    }
+
+    // Hours ...
+    const hours = now.getHours();
+    const hoursNumbers = hours.toString().split('');
+    if (hoursNumbers.length === 1) hoursNumbers.unshift('0');
+    for (let k = 0; k < numbersHoursEl.length; k++) {
+      numbersHoursEl[k].removeAttribute('class');
+      numbersHoursEl[k].classList.add('number');
+      numbersHoursEl[k].classList.add(`n${hoursNumbers[k]}`);
+    }
+  }
+
+  setInterval(setDate, 1000);
 })();
