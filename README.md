@@ -2,4 +2,6 @@
 
 A clock made using CSS Grid
 
-¯\\_(ツ)\_/¯
+[https://css-grid-clock.surge.sh](https://css-grid-clock.surge.sh)
+
+¯\\\_(ツ)\_/¯
